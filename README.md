@@ -6,7 +6,7 @@
     <title>Интерактивная карта</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
-        #map { height: 600px; }
+        #map { height: 800px; }
     </style>
 </head>
 <body>
@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         // Инициализация карты
-        const map = L.map('map').setView([55.7558, 37.6176], 10); // Центр на Москве
+        const map = L.map('map').setView([56.0184, 92.8672], 5); // Центр на Москве
 
         // Добавление слоя с картой (используем OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,12 +23,14 @@
         }).addTo(map);
 
         // Добавление маркера
-        const marker = L.marker([55.7558, 37.6176]).addTo(map);
-        marker.bindPopup("<b>Москва</b><br>Столица России.").openPopup();
-
+        const marker = L.marker([56.0184, 92.8672]).addTo(map);
+        marker.bindPopup("<b>ст.Базаиха</b><br>По состоянию на 12.02.25 свободно 50 из 105 вагонов.").openPopup();
         // Добавление второго маркера
-        const marker2 = L.marker([59.9343, 30.3351]).addTo(map);
-        marker2.bindPopup("<b>Санкт-Петербург</b><br>Культурная столица.");
+        const marker2 = L.marker([56.1300,87.4500]).addTo(map);
+        marker2.bindPopup("<b>ст. Мариинск</b><br>По состоянию на12.02.25 свободно 63 из 65 вагонов.");
+       // Добавление третьего маркера
+        const marker3 = L.marker([56.272797, 91.09375]).addTo(map);
+        marker2.bindPopup("<b>ст.Чернореченская</b><br>По состоянию на12.02.25 свободно 36 из 36 вагонов.");
     </script>
 </body>
 </html>
