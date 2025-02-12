@@ -1,1 +1,34 @@
-# dima4680.github.io
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивная карта</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 600px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Инициализация карты
+        const map = L.map('map').setView([55.7558, 37.6176], 10); // Центр на Москве
+
+        // Добавление слоя с картой (используем OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Добавление маркера
+        const marker = L.marker([55.7558, 37.6176]).addTo(map);
+        marker.bindPopup("<b>Москва</b><br>Столица России.").openPopup();
+
+        // Добавление второго маркера
+        const marker2 = L.marker([59.9343, 30.3351]).addTo(map);
+        marker2.bindPopup("<b>Санкт-Петербург</b><br>Культурная столица.");
+    </script>
+</body>
+</html>
